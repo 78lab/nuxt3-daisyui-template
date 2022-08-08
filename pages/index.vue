@@ -4,6 +4,7 @@
     <InputEntry />
     <Auth />
     <h3>Time Ago: {{ timeAgo }}</h3>
+    <button class="btn btn-primary">primary</button>
 </div>
 </template>
 

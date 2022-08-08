@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     modules: [
         '@vueuse/nuxt',
         '@nuxtjs/supabase',
-        // '@unocss/nuxt',
+        '@nuxtjs/tailwindcss',
         '@pinia/nuxt',
         // '@nuxtjs/color-mode',
       ],
