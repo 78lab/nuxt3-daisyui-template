@@ -1,7 +1,8 @@
 <template>
 <div>
-    <h1>Test01: {{name}} {{type}}</h1>
+    <h1>Test:{{$route.params.id}} {{name}} {{type}}</h1>
     <button class="btn" @click="gosearch()">Go search</button>
+    <button class="btn" @click="$router.back()">Go Back</button>
 </div>
 </template>
 

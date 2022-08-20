@@ -6,7 +6,7 @@
 
 
     <div class="drawer drawer-mobile">
-        <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+        <input id="my-drawer" type="checkbox" class="drawer-toggle" v-model="checked"/>
         <div class="drawer-content">
             <!-- Nav Bar -->
             <div
@@ -56,17 +56,19 @@
             <!-- Page content -->
             <div class="p-6 pb-16">
                 <slot />
+                <div>debug: checked:{{checked}}</div>
             </div>
 
         </div>
         <div class="drawer-side">
             <label for="my-drawer" class="drawer-overlay"></label>
-            <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+            <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content" @click="closeDrawer()">
                 <!-- Sidebar content here -->
-                <li><a>Sidebar Item 1</a></li>
-                <li><a>Sidebar Item 2</a></li>
-
+                <li><NuxtLink to="/search">Search</NuxtLink></li>
+                <li><NuxtLink to="/about">About</NuxtLink></li>
+                <li><div>debug: checked:{{checked}}</div></li>
             </ul>
+            
         </div>
     </div>
 
@@ -90,4 +92,18 @@ useHead({
         { name: 'twitter:image:alt', content: `` }
     ]
 })
+
+  let checked = ref(false)
+  function closeDrawer() {
+    checked.value = false
+  }
+
+  function openDrawer() {
+    checked.value = true
+  }
+
+  onMounted(()=>{
+    console.log("onMounted layout")
+    closeDrawer()
+  })
 </script>
